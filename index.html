@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>How Well Do You Know Rio? 🍊</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Decorative Background -->
+    <div class="background-decoration">
+        <span class="orange orange-1">🍊</span>
+        <span class="orange orange-2">🍊</span>
+        <span class="orange orange-3">🍊</span>
+        <span class="leaf leaf-1">🌿</span>
+        <span class="leaf leaf-2">🌿</span>
+        <span class="leaf leaf-3">🌿</span>
+    </div>
+
+
+    <!-- =========================
+         LANDING PAGE
+    ========================== -->
+
+    <main id="home-screen" class="screen active">
+
+        <div class="home-content">
+
+            <div class="orange-logo">
+                <span>🍊</span>
+            </div>
+
+            <p class="eyebrow">A VERY IMPORTANT FRIENDSHIP TEST</p>
+
+            <h1>
+                How Well Do<br>
+                You Know <span>Rio?</span>
+            </h1>
+
+            <p class="intro">
+                You think you know me?
+                <br>
+                Let's see about that.
+            </p>
+
+            <button id="start-btn" class="main-button">
+                <span>START THE QUIZ</span>
+                <span class="button-arrow">→</span>
+            </button>
+
+            <p class="warning">
+                ⚠️ Wrong answers may affect our friendship.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         QUIZ PAGE
+    ========================== -->
+
+    <main id="quiz-screen" class="screen">
+
+        <div class="quiz-container">
+
+            <!-- Top Section -->
+
+            <div class="quiz-top">
+
+                <div class="question-number">
+                    QUESTION <span id="question-number">01</span>
+                </div>
+
+                <div class="score-display">
+                    SCORE <span id="score">0</span>
+                </div>
+
+            </div>
+
+
+            <!-- Progress -->
+
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+
+
+            <!-- Question -->
+
+            <div id="question-card" class="question-card">
+
+                <div class="question-category" id="question-category">
+                    GETTING STARTED
+                </div>
+
+                <h2 id="question-text">
+                    Question goes here
+                </h2>
+
+                <div id="answers" class="answers">
+                    <!-- JavaScript adds answers -->
+                </div>
+
+            </div>
+
+
+            <div class="quiz-footer">
+
+                <span id="progress-text">
+                    1 / 10
+                </span>
+
+                <span>
+                    Choose wisely 🍊
+                </span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         RESULT PAGE
+    ========================== -->
+
+    <main id="result-screen" class="screen">
+
+        <div class="result-container">
+
+            <div id="result-emoji" class="result-emoji">
+                🍊
+            </div>
+
+            <p class="eyebrow">
+                FRIENDSHIP RESULTS
+            </p>
+
+            <h1 id="result-title">
+                You Survived.
+            </h1>
+
+            <div class="score-circle">
+
+                <div class="final-score">
+                    <span id="final-score">0</span>
+                    <small>/ 10</small>
+                </div>
+
+            </div>
+
+            <p id="result-message" class="result-message">
+                Let's see how well you really know me.
+            </p>
+
+            <div class="result-details">
+
+                <div>
+                    <strong id="correct-count">0</strong>
+                    <span>Correct</span>
+                </div>
+
+                <div>
+                    <strong id="percentage">0%</strong>
+                    <span>Score</span>
+                </div>
+
+            </div>
+
+            <button id="restart-btn" class="main-button">
+                <span>TRY AGAIN</span>
+                <span>↻</span>
+            </button>
+
+            <p class="result-footer">
+                Thanks for playing! 🍊
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- Confetti container -->
+
+    <div id="confetti-container"></div>
+
+
+    <!-- Transition Overlay -->
+
+    <div id="transition-overlay"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
