@@ -1,0 +1,869 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #f47b20;
+    --orange-dark: #d95e0b;
+    --orange-light: #ffb347;
+    --cream: #fff8ed;
+    --cream-dark: #f9ead5;
+    --brown: #432818;
+    --green: #536b3e;
+    --white: #ffffff;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background-decoration {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.orange,
+.leaf {
+    position: absolute;
+    opacity: 0.12;
+    user-select: none;
+}
+
+.orange {
+    font-size: clamp(80px, 12vw, 180px);
+}
+
+.leaf {
+    font-size: clamp(50px, 8vw, 120px);
+}
+
+.orange-1 {
+    top: 5%;
+    left: -20px;
+    transform: rotate(-25deg);
+}
+
+.orange-2 {
+    bottom: -40px;
+    right: -20px;
+    transform: rotate(20deg);
+}
+
+.orange-3 {
+    top: 45%;
+    right: 8%;
+    font-size: 70px;
+}
+
+.leaf-1 {
+    top: 15%;
+    right: 5%;
+    transform: rotate(35deg);
+}
+
+.leaf-2 {
+    bottom: 15%;
+    left: 5%;
+    transform: rotate(-25deg);
+}
+
+.leaf-3 {
+    top: 65%;
+    left: 15%;
+    font-size: 60px;
+}
+
+
+/* =========================================
+   SCREENS
+========================================= */
+
+.screen {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.screen.active {
+    display: flex;
+}
+
+
+/* =========================================
+   LANDING PAGE
+========================================= */
+
+.home-content {
+    width: min(700px, 100%);
+    text-align: center;
+
+    animation: homeAppear 1s ease forwards;
+}
+
+@keyframes homeAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.orange-logo {
+    width: 95px;
+    height: 95px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--orange);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 15px 35px rgba(244, 123, 32, 0.25);
+
+    animation: floatOrange 3s ease-in-out infinite;
+}
+
+.orange-logo span {
+    font-size: 55px;
+}
+
+@keyframes floatOrange {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: var(--orange);
+
+    margin-bottom: 18px;
+}
+
+
+.home-content h1,
+.result-container h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(48px, 8vw, 88px);
+
+    line-height: 0.98;
+
+    margin-bottom: 25px;
+}
+
+.home-content h1 span {
+    color: var(--orange);
+    font-style: italic;
+}
+
+
+.intro {
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #795c48;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.main-button {
+    border: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    padding: 18px 28px;
+
+    background: var(--brown);
+    color: white;
+
+    border-radius: 100px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+
+    background: var(--orange);
+
+    box-shadow:
+        0 12px 30px rgba(244, 123, 32, 0.3);
+}
+
+.button-arrow {
+    font-size: 20px;
+}
+
+
+.warning {
+    margin-top: 22px;
+
+    font-size: 12px;
+
+    color: #a78d78;
+}
+
+
+/* =========================================
+   QUIZ
+========================================= */
+
+.quiz-container {
+    width: min(850px, 100%);
+}
+
+
+.quiz-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 12px;
+}
+
+.question-number,
+.score-display {
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.question-number {
+    color: var(--orange);
+}
+
+.score-display {
+    color: #9a806c;
+}
+
+.score-display span {
+    color: var(--brown);
+    margin-left: 4px;
+}
+
+
+.progress-container {
+    width: 100%;
+    height: 5px;
+
+    background: var(--cream-dark);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 40px;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+
+    background: var(--orange);
+
+    border-radius: inherit;
+
+    transition: width 0.5s ease;
+}
+
+
+/* =========================================
+   QUESTION CARD
+========================================= */
+
+.question-card {
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid rgba(67, 40, 24, 0.08);
+
+    border-radius: 30px;
+
+    padding: clamp(30px, 6vw, 65px);
+
+    box-shadow:
+        0 25px 70px rgba(67, 40, 24, 0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.question-category {
+    display: inline-block;
+
+    padding: 8px 13px;
+
+    background: #fff0df;
+
+    color: var(--orange-dark);
+
+    border-radius: 100px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 20px;
+}
+
+
+.question-card h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(28px, 5vw, 45px);
+
+    line-height: 1.15;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   ANSWERS
+========================================= */
+
+.answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+}
+
+.answer-button {
+    position: relative;
+
+    min-height: 65px;
+
+    padding: 16px 20px;
+
+    border: 2px solid #f0dfcc;
+
+    background: var(--cream);
+
+    border-radius: 17px;
+
+    color: var(--brown);
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        border 0.2s ease,
+        background 0.2s ease;
+}
+
+.answer-button:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--orange-light);
+
+    background: #fff4e5;
+}
+
+.answer-letter {
+    display: inline-flex;
+
+    width: 29px;
+    height: 29px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 10px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: var(--orange);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.answer-button.correct {
+    background: #e5f1dc;
+    border-color: #78965e;
+
+    animation: correctAnswer 0.5s ease;
+}
+
+.answer-button.wrong {
+    background: #ffe3d9;
+    border-color: #d66b45;
+
+    animation: wrongAnswer 0.4s ease;
+}
+
+@keyframes correctAnswer {
+
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+@keyframes wrongAnswer {
+
+    25%,
+    75% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+
+/* =========================================
+   QUIZ FOOTER
+========================================= */
+
+.quiz-footer {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    color: #a78d78;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   QUESTION TRANSITIONS
+========================================= */
+
+.question-card.transition-next {
+    animation: questionNext 0.6s ease forwards;
+}
+
+.question-card.transition-slice {
+    animation: sliceTransition 0.6s ease forwards;
+}
+
+.question-card.transition-leaf {
+    animation: leafTransition 0.6s ease forwards;
+}
+
+.question-card.transition-bounce {
+    animation: bounceTransition 0.6s ease forwards;
+}
+
+@keyframes questionNext {
+
+    from {
+        opacity: 0;
+        transform: translateX(60px) rotate(1deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0);
+    }
+}
+
+@keyframes sliceTransition {
+
+    from {
+        opacity: 0;
+        transform: scale(0.75) rotate(-5deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+@keyframes leafTransition {
+
+    from {
+        opacity: 0;
+        transform: translateY(-60px) rotate(-5deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+@keyframes bounceTransition {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+
+    70% {
+        transform: translateY(-10px) scale(1.02);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   TRANSITION OVERLAY
+========================================= */
+
+#transition-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: var(--orange);
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+}
+
+#transition-overlay.active {
+    animation: orangeWipe 0.7s ease;
+}
+
+@keyframes orangeWipe {
+
+    0% {
+        transform: scaleX(0);
+    }
+
+    45% {
+        transform: scaleX(1);
+    }
+
+    55% {
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+
+    100% {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+}
+
+
+/* =========================================
+   RESULT PAGE
+========================================= */
+
+.result-container {
+    width: min(650px, 100%);
+
+    text-align: center;
+
+    animation: resultAppear 0.8s ease;
+}
+
+@keyframes resultAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+.result-emoji {
+    font-size: 80px;
+
+    margin-bottom: 15px;
+
+    animation: floatOrange 3s ease-in-out infinite;
+}
+
+
+.score-circle {
+    width: 190px;
+    height: 190px;
+
+    margin: 20px auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle, var(--cream) 55%, transparent 56%),
+        conic-gradient(
+            var(--orange) var(--score-degree, 0deg),
+            var(--cream-dark) 0deg
+        );
+
+    box-shadow:
+        0 15px 40px rgba(244, 123, 32, 0.15);
+}
+
+
+.final-score {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.final-score span {
+    font-family: "Playfair Display", serif;
+
+    font-size: 55px;
+
+    color: var(--orange);
+}
+
+.final-score small {
+    font-size: 18px;
+    color: #a78d78;
+}
+
+
+.result-message {
+    max-width: 500px;
+
+    margin: 0 auto 25px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #795c48;
+}
+
+
+.result-details {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 50px;
+
+    margin-bottom: 30px;
+}
+
+.result-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.result-details strong {
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
+    color: var(--brown);
+}
+
+.result-details span {
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    color: #a78d78;
+
+    text-transform: uppercase;
+}
+
+
+.result-footer {
+    margin-top: 20px;
+
+    color: #a78d78;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+#confetti-container {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 200;
+
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    top: -20px;
+
+    animation:
+        confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall {
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .screen {
+        padding: 20px;
+    }
+
+    .home-content h1 {
+        font-size: 48px;
+    }
+
+    .orange-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .orange-logo span {
+        font-size: 45px;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+    }
+
+    .question-card {
+        padding: 28px 22px;
+        border-radius: 24px;
+    }
+
+    .question-card h2 {
+        font-size: 30px;
+    }
+
+    .quiz-footer {
+        font-size: 9px;
+    }
+
+    .result-container h1 {
+        font-size: 45px;
+    }
+
+    .score-circle {
+        width: 165px;
+        height: 165px;
+    }
+
+    .final-score span {
+        font-size: 48px;
+    }
+
+}
